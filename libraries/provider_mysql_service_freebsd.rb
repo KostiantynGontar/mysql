@@ -33,7 +33,7 @@ class Chef
 
             package new_resource.package_name do
               action :install
-              ignore_failure true
+              not_if "pkg_info #{package_name}" 
             end
 
             [include_dir, new_resource.data_dir].each do |__dir|
