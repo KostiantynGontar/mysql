@@ -33,7 +33,7 @@ class Chef
 
             package new_resource.package_name do
               action :install
-              not_if "pkg_info #{new_resource.package_name}" 
+              not_if "pkg_info mysql-server*" 
             end
 
             [include_dir, new_resource.data_dir].each do |__dir|
